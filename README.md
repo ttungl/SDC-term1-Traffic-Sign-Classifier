@@ -281,25 +281,18 @@ Figure 5: Predicted signs from 10 new images of the model. Note, A# is the actua
 
 The softmax probabilities are visualized as below. 
 
-Be Aware of Ice/Snow   			Children crossing
+|:------------------------------:|:----------------------------:|	 
+| Be Aware of Ice/Snow           | Children crossing    	| 
+| ![alt text][image6]  		 | ![alt text][image7]		|
+| No entry             		 | Roundabout mandatory 	|
+| ![alt text][image71] 		 | ![alt text][image72] 	|
+| Slippery road        		 | Speed limit 70km/h  		|
+| ![alt text][image73] 		 | ![alt text][image74]		|
+| Speed limit 100km/h  		 | Speed limit 60km/h 		|
+| ![alt text][image75] 		 | ![alt text][image76] 	|
+| Stop                		 | Turn left ahead 		|
+| ![alt text][image77] 		 | ![alt text][image78]		|
 
-![alt text][image6] ![alt text][image7]
-
-No entry             			Roundabout mandatory
-
-![alt text][image71] ![alt text][image72]
-
-Slippery road        			Speed limit 70km/h 
-
-![alt text][image73] ![alt text][image74]
-
-Speed limit 100km/h  			Speed limit 60km/h
-
-![alt text][image75] ![alt text][image76]
-
-Stop                 			Turn left ahead 
-
-![alt text][image77] ![alt text][image78]
 
 ## Visualize Layers of the neural network
 
