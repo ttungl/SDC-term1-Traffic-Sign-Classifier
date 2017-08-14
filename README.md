@@ -39,6 +39,7 @@ The goals / steps of this project are the following:
 [image76]: ./images_output/softmax_7.png "new image"
 [image77]: ./images_output/softmax_8.png "new image"
 [image78]: ./images_output/softmax_9.png "new image"
+
 <!-- conv1 layer -->
 
 [image8]: ./images_output/conv1_img0.png "Input images"
@@ -112,11 +113,13 @@ This implementation addressed each point of the [rubric points](https://review.u
 #### Exploratory Visualization
 
 * First, I plot `43` images in the training dataset as in `Figure 1`. The data shows that the input images are random in the set in terms of the classes. 
-![alt text][image1] 
+![alt text][image1]
+
 Figure 1: Input training dataset. 
 
 Then, I get the statistical analysis of the dataset in terms of the number of occurrences in each class as in `Figure 2`. 
 ![alt text][image2] 
+
 Figure 2: Number of occurrences for each class. 
 
 The plot shows that the amount of examples in each class is imbalanced. The largest amount of examples are classes `1, 2`, which are around `1600` examples for each class. 
@@ -127,6 +130,7 @@ The plot shows that the amount of examples in each class is imbalanced. The larg
 
 * As recommended, I use a quick way to approximately normalize data, `(pixel-128.)/128.`. Then, grayscale is used to convert the RGB image into GRAY image, using OpenCV library `cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)`. After that, I reshape the images to the size of `(32,32)`. The result of this process is as follows.
 ![alt text][image3]
+
 Figure 3: Grayscale images processed. 
 
 There is a technique called [spatial transformer](https://github.com/tensorflow/models/tree/master/transformer), which allows the spatial manipulation of image within the network. This technique helps eliminate the white noise of the input images. I think this can be used later to improve the quality of the input image in my implementation. 
