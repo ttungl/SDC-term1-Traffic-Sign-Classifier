@@ -281,13 +281,23 @@ Figure 5: Predicted signs from 10 new images of the model. Note, A# is the actua
 
 The softmax probabilities are visualized as below. 
 
+Be Aware of Ice/Snow   Children crossing
+
 ![alt text][image6] ![alt text][image7]
+
+No entry             Roundabout mandatory
 
 ![alt text][image71] ![alt text][image72]
 
+Slippery road        Speed limit 70km/h 
+
 ![alt text][image73] ![alt text][image74]
 
+Speed limit 100km/h  Speed limit 60km/h
+
 ![alt text][image75] ![alt text][image76]
+
+Stop                 Turn left ahead 
 
 ![alt text][image77] ![alt text][image78]
 
@@ -298,128 +308,167 @@ I export the images in each layers as follows.
 #### Convolutional layer 1:
 
 Be Aware of Ice/Snow 
+
 ![alt text][image8]
 
 Children crossing  
+
 ![alt text][image9]
 
 No entry
+
 ![alt text][image10]
 
 Roundabout mandatory 
+
 ![alt text][image11]
 
 Slippery road 
+
 ![alt text][image12]
 
 Speed limit 70km/h 
+
 ![alt text][image13]
 
 Speed limit 100km/h 
+
 ![alt text][image14]
 
 Speed limit 60km/h
+
 ![alt text][image15]
 
 Stop
+
 ![alt text][image16]
 
 Turn left ahead 
+
 ![alt text][image17]
 
 #### Convolutional layer 1 Max pooling:
 
 Be Aware of Ice/Snow 
+
 ![alt text][image18]
 
 Children crossing
+
 ![alt text][image19]
 
 No entry
+
 ![alt text][image20]
 
 Roundabout mandatory
+
 ![alt text][image21]
 
 Slippery road 
+
 ![alt text][image22]
 
 Speed limit 70km/h
+
 ![alt text][image23]
 
 Speed limit 100km/h
+
 ![alt text][image24]
 
 Speed limit 60km/h
+
 ![alt text][image25]
 
 Stop
+
 ![alt text][image26]
 
 Turn left ahead 
+
 ![alt text][image27] 
 
 #### Convolutional layer 2:
 
 Be Aware of Ice/Snow 
+
 ![alt text][image28]
 
 Children crossing
+
 ![alt text][image29]
 
 No entry
+
 ![alt text][image30]
 
 Roundabout mandatory
+
 ![alt text][image31]
 
 Slippery road
+
 ![alt text][image32]
 
 Speed limit 70km/h
+
 ![alt text][image33]
 
 Speed limit 100km/h
+
 ![alt text][image34]
 
 Speed limit 60km/h
+
 ![alt text][image35]
 
 Stop
+
 ![alt text][image36]
 
 Turn left ahead 
+
 ![alt text][image37] 
 
 #### Convolutional layer 2 Max pooling:
 
 Be Aware of Ice/Snow 
+
 ![alt text][image38]
 
 Children crossing
+
 ![alt text][image39]
 
 No entry
+
 ![alt text][image40]
 
 Roundabout mandatory
+
 ![alt text][image41]
 
 Slippery road
+
 ![alt text][image42]
 
 Speed limit 70km/h
+
 ![alt text][image43]
 
 Speed limit 100km/h
+
 ![alt text][image44]
 
 Speed limit 60km/h
+
 ![alt text][image45]
 
 Stop
+
 ![alt text][image46]
 
 Turn left ahead
-![alt text][image47]
 
+![alt text][image47]
