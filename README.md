@@ -261,6 +261,8 @@ Figure 5: Predicted signs from 10 new images of the model. Note, A# is the actua
 
 * From the result, we see that the model works properly with 70% accuracy. There are three signs that the model predicted incorrectly per 10 signs. The top left sign is the sign of `be aware of ice/snow` has been covered mostly by snow, so it's hard to recognize this image, the model predicted it as a `roundabout mandatory` (`40`). The second image from the top left sign is the sign of `children crossing`, however, this image has been distorted after preprocessing. I observed that this image originally was too wide, so after reshaping it, the sign is distorted, therefore, the model found difficult to recognize it. It predicted this sign as a `speed limit 80km/h`. The second image from the bottom left is `speed limit 100 km/h`. It's blurred and there are some obstacles in front of it, so the model failed to recognize this one. Other than that, all the new images are clear to be recognized correctly by the model. 
 
+The prediction result of my neural network model for new images:
+
 | New Image      		|  Prediction									| 
 |:---------------------:|:---------------------------------------------:|	 
 | Be Aware of Ice/Snow  | General caution    							|  
