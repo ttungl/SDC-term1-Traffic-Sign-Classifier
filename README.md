@@ -291,10 +291,10 @@ The softmax probabilities are visualized as below.
 ![alt text][image77] ![alt text][image78]
 
 ## Visualize Layers of the neural network
-
 I export the images in each layers as follows.
 
-**Convolutional layer 1:
+#### Convolutional layer 1:
+
 ![alt text][image8]
 ![alt text][image9]
 ![alt text][image10]
@@ -306,7 +306,7 @@ I export the images in each layers as follows.
 ![alt text][image16]
 ![alt text][image17]
 
-**Convolutional layer 1 Max pooling:
+#### Convolutional layer 1 Max pooling:
 
 ![alt text][image18]
 ![alt text][image19]
@@ -319,7 +319,7 @@ I export the images in each layers as follows.
 ![alt text][image26]
 ![alt text][image27] 
 
-**Convolutional layer 2:
+#### Convolutional layer 2:
 
 ![alt text][image28]
 ![alt text][image29]
@@ -332,7 +332,7 @@ I export the images in each layers as follows.
 ![alt text][image36]
 ![alt text][image37] 
 
-**Convolutional layer 2 Max pooling:
+#### Convolutional layer 2 Max pooling:
 
 ![alt text][image38]
 ![alt text][image39]
@@ -344,3 +344,4 @@ I export the images in each layers as follows.
 ![alt text][image45]
 ![alt text][image46]
 ![alt text][image47]
+
