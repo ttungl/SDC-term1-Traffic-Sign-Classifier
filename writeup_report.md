@@ -39,10 +39,10 @@ The goals / steps of this project are the following:
 [image76]: ./images_output/softmax_7.png "new image"
 [image77]: ./images_output/softmax_8.png "new image"
 [image78]: ./images_output/softmax_9.png "new image"
+
 <!-- conv1 layer -->
 
 [image8]: ./images_output/conv1_img0.png "Input images"
-
 [image9]: ./images_output/conv1_img1.png "Input images"
 
 [image10]: ./images_output/conv1_img2.png "Input images"
@@ -112,11 +112,13 @@ This implementation addressed each point of the [rubric points](https://review.u
 #### Exploratory Visualization
 
 * First, I plot `43` images in the training dataset as in `Figure 1`. The data shows that the input images are random in the set in terms of the classes. 
-![alt text][image1] 
+![alt text][image1]
+
 Figure 1: Input training dataset. 
 
 Then, I get the statistical analysis of the dataset in terms of the number of occurrences in each class as in `Figure 2`. 
 ![alt text][image2] 
+
 Figure 2: Number of occurrences for each class. 
 
 The plot shows that the amount of examples in each class is imbalanced. The largest amount of examples are classes `1, 2`, which are around `1600` examples for each class. 
@@ -127,6 +129,7 @@ The plot shows that the amount of examples in each class is imbalanced. The larg
 
 * As recommended, I use a quick way to approximately normalize data, `(pixel-128.)/128.`. Then, grayscale is used to convert the RGB image into GRAY image, using OpenCV library `cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)`. After that, I reshape the images to the size of `(32,32)`. The result of this process is as follows.
 ![alt text][image3]
+
 Figure 3: Grayscale images processed. 
 
 There is a technique called [spatial transformer](https://github.com/tensorflow/models/tree/master/transformer), which allows the spatial manipulation of image within the network. This technique helps eliminate the white noise of the input images. I think this can be used later to improve the quality of the input image in my implementation. 
@@ -257,6 +260,8 @@ Figure 5: Predicted signs from 10 new images of the model. Note, A# is the actua
 
 * From the result, we see that the model works properly with 70% accuracy. There are three signs that the model predicted incorrectly per 10 signs. The top left sign is the sign of `be aware of ice/snow` has been covered mostly by snow, so it's hard to recognize this image, the model predicted it as a `roundabout mandatory` (`40`). The second image from the top left sign is the sign of `children crossing`, however, this image has been distorted after preprocessing. I observed that this image originally was too wide, so after reshaping it, the sign is distorted, therefore, the model found difficult to recognize it. It predicted this sign as a `speed limit 80km/h`. The second image from the bottom left is `speed limit 100 km/h`. It's blurred and there are some obstacles in front of it, so the model failed to recognize this one. Other than that, all the new images are clear to be recognized correctly by the model. 
 
+The prediction result of my neural network model for new images:
+
 | New Image      		|  Prediction									| 
 |:---------------------:|:---------------------------------------------:|	 
 | Be Aware of Ice/Snow  | General caution    							|  
@@ -266,6 +271,7 @@ Figure 5: Predicted signs from 10 new images of the model. Note, A# is the actua
 | Slippery road 		| Slippery road									|
 | Speed limit 70km/h 	| Speed limit 70km/h 							|
 | Speed limit 100km/h 	| No passing for vehicles over 3.5 metric tons 	|
+| Speed limit 60km/h 	| Speed limit 60km/h 							|
 | Stop 			   		| Stop											|
 | Turn left ahead 		| Turn left ahead								|
 
@@ -288,143 +294,174 @@ The softmax probabilities are visualized as below.
 
 ## Visualize Layers of the neural network
 
+I export the images in each layers as follows.
 
+#### Convolutional layer 1:
 
-<!-- 
-###Writeup / README
+Be Aware of Ice/Snow 
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+![alt text][image8]
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+Children crossing  
 
-###Data Set Summary & Exploration
+![alt text][image9]
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+No entry
 
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
+![alt text][image10]
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+Roundabout mandatory 
 
-####2. Include an exploratory visualization of the dataset.
+![alt text][image11]
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Slippery road 
 
-![alt text][image1]
+![alt text][image12]
 
-###Design and Test a Model Architecture
+Speed limit 70km/h 
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+![alt text][image13]
 
-As a first step, I decided to convert the images to grayscale because ...
+Speed limit 100km/h 
 
-Here is an example of a traffic sign image before and after grayscaling.
+![alt text][image14]
 
-![alt text][image2]
+Speed limit 60km/h
 
-As a last step, I normalized the image data because ...
+![alt text][image15]
 
-I decided to generate additional data because ... 
+Stop
 
-To add more data to the the data set, I used the following techniques because ... 
+![alt text][image16]
 
-Here is an example of an original image and an augmented image:
+Turn left ahead 
 
-![alt text][image3]
+![alt text][image17]
 
-The difference between the original data set and the augmented data set is the following ... 
+#### Convolutional layer 1 Max pooling:
 
+Be Aware of Ice/Snow 
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+![alt text][image18]
 
-My final model consisted of the following layers:
+Children crossing
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+![alt text][image19]
 
+No entry
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+![alt text][image20]
 
-To train the model, I used an ....
+Roundabout mandatory
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+![alt text][image21]
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+Slippery road 
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+![alt text][image22]
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+Speed limit 70km/h
 
-###Test a Model on New Images
+![alt text][image23]
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+Speed limit 100km/h
 
-Here are five German traffic signs that I found on the web:
+![alt text][image24]
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+Speed limit 60km/h
 
-The first image might be difficult to classify because ...
+![alt text][image25]
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+Stop
 
-Here are the results of the prediction:
+![alt text][image26]
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+Turn left ahead 
 
+![alt text][image27] 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+#### Convolutional layer 2:
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+Be Aware of Ice/Snow 
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+![alt text][image28]
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+Children crossing
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+![alt text][image29]
 
+No entry
 
-For the second image ... 
+![alt text][image30]
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications? -->
+Roundabout mandatory
+
+![alt text][image31]
+
+Slippery road
+
+![alt text][image32]
+
+Speed limit 70km/h
+
+![alt text][image33]
+
+Speed limit 100km/h
+
+![alt text][image34]
+
+Speed limit 60km/h
+
+![alt text][image35]
+
+Stop
+
+![alt text][image36]
+
+Turn left ahead 
+
+![alt text][image37] 
+
+#### Convolutional layer 2 Max pooling:
+
+Be Aware of Ice/Snow 
+
+![alt text][image38]
+
+Children crossing
+
+![alt text][image39]
+
+No entry
+
+![alt text][image40]
+
+Roundabout mandatory
+
+![alt text][image41]
+
+Slippery road
+
+![alt text][image42]
+
+Speed limit 70km/h
+
+![alt text][image43]
+
+Speed limit 100km/h
+
+![alt text][image44]
+
+Speed limit 60km/h
+
+![alt text][image45]
+
+Stop
+
+![alt text][image46]
+
+Turn left ahead
+
+![alt text][image47]
 
 
