@@ -218,7 +218,7 @@ There is a technique called [spatial transformer](https://github.com/tensorflow/
 | KEEP_PROB        	|  	0.5	|
 | beta (REGULARIZATION)	|  	0.001	|
 
-* To minimize the loss, I use one-hot encoded and softmax cross entropy for the logits. Then, I use the L2-regularization to prevent overfitting by using `newloss = loss + beta*regularization`. `beta` is set at `0.001`. At first, I pretended to use SGD with learning rate decay but the ADAM optimizer seems to be a good option as it's simple and performs well with additional hyperparameters. So, I used ADAM optimizer for the training process. 
+* To minimize the loss, I use one-hot encoded and softmax cross entropy for the logits. Then, I use the L2-regularization to prevent overfitting by using `newloss = loss + beta*regularization`. `beta` is set at `0.001`. At first, I pretended to use SGD with learning rate decay but the ADAM optimizer seems to be a good option as it's simple and performs well without additional hyperparameters. So, I used ADAM optimizer for the training process. 
 
 * The `BATCH_SIZE` is `128`, and the number of `EPOCHS` is `50`. `LEARNING_RATE` is set at `0.001` and keep_prob is `0.5`. 
 
