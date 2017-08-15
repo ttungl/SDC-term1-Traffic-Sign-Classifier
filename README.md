@@ -135,6 +135,8 @@ Figure 3: Grayscale images processed.
 
 There is a technique called [spatial transformer](https://github.com/tensorflow/models/tree/master/transformer), which allows the spatial manipulation of image within the network. This technique helps eliminate the white noise of the input images. I think this can be used later to improve the quality of the input image in my implementation. 
 
+* Update: The [brightness augmentation](https://medium.com/@vivek.yadav/improved-performance-of-deep-learning-neural-network-models-on-traffic-sign-classification-using-6355346da2dc) is also a robust alternative to improve the performance of classifications. 
+
 #### Model Architecture
 
 * I modified the LeNet Architecture by adding dropout probabilities between fully-connected layers.
