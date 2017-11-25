@@ -225,6 +225,9 @@ There is a technique called [spatial transformer](https://github.com/tensorflow/
 
 * The `BATCH_SIZE` is `128`, and the number of `EPOCHS` is `50`. `LEARNING_RATE` is set at `0.001` and keep_prob is `0.5`. 
 
+* Note: [An epoch](https://stackoverflow.com/a/38494022/2881205
+) is a measure of the number of iterations of training samples are used once to update the weights. Number of iterations = number of tranining samples is divided by batch size. Each epoch runs all of training samples at onces (~ number of iterations) pass through the learning algorithm simultaneously before the weights are updated.
+
 #### Solution Approach
 
 	EPOCH 50 ...
